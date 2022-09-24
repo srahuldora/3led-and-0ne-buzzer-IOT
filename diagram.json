@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "author": "Rahul Dora",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 138.29,
+      "left": -1035.9,
+      "attrs": { "env": "micropython-20220117-v1.18" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -123.04,
+      "left": -931.04,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 234.56,
+      "left": -547.21,
+      "attrs": { "value": "2000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 99.22,
+      "left": -1805.9,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 726.06,
+      "left": -874.95,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 415.39,
+      "left": -1388.25,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 453.09,
+      "left": -1543.95,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -265.83,
+      "left": -783.49,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "r1:1", "led1:A", "green", [ "v0" ] ],
+    [ "pico:GP14", "r2:2", "green", [ "h0" ] ],
+    [ "r2:1", "led3:A", "green", [ "v0" ] ],
+    [ "pico:GP13", "r3:2", "green", [ "h0" ] ],
+    [ "r3:1", "led2:A", "green", [ "v0" ] ],
+    [ "pico:GND.4", "led2:C", "black", [ "h0" ] ],
+    [ "pico:GND.7", "led3:C", "black", [ "h110.78", "v198.05" ] ],
+    [ "pico:GND.1", "led1:C", "black", [ "h-126.94", "v-206.01", "h3.74" ] ],
+    [ "pico:GP15", "r1:2", "green", [ "h-67.81", "v84.79", "h310.71", "v-94.6", "h327.37" ] ],
+    [ "led1:A", "bz1:2", "green", [ "v-46.69", "h240.05", "v-55.05" ] ],
+    [ "led1:C", "bz1:1", "green", [ "v-0.91", "h-58.82", "v-85.18" ] ]
+  ]
+}
