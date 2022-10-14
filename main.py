@@ -10,6 +10,7 @@ while True:
   led_ext1.value(1)
   print("EXT LED ON")
   utime.sleep(3)
+  
   buzzer = PWM(Pin(15))
   buzzer.freq(500)
   buzzer.duty_u16(1000)
